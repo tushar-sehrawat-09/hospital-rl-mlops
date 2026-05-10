@@ -1,0 +1,12 @@
+{
+  "n_episodes": 50,
+  "baseline_avg_wait": 5.8403,
+  "rl_avg_wait": 6.6151,
+  "baseline_avg_reward": -6.9475,
+  "rl_avg_reward": -7.8201,
+  "plots": [
+    "reports/plot_reward_comparison.png",
+    "reports/plot_wait_comparison.png",
+    "reports/plot_queue_lengths.png"
+  ]
+}

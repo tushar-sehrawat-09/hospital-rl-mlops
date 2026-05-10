@@ -1,0 +1,23 @@
+# ─────────────────────────────────────────────
+# Hospital Resource Allocation – RL Config v1
+# Run: python train.py --config configs/qlearning_v1.yaml
+# ─────────────────────────────────────────────
+
+run_id: "qlearning-v1"
+seed: 42
+
+env:
+  episode_length: 100        # 100 hours per episode
+
+agent:
+  algorithm: "Q-Learning"
+  alpha: 0.1                 # learning rate
+  gamma: 0.95                # discount factor
+  epsilon: 1.0               # initial exploration
+  epsilon_min: 0.05          # minimum exploration
+  epsilon_decay: 0.97        # decay per episode
+
+training:
+  n_episodes: 300
+  log_every: 10
+  save_checkpoints: [100, 200]
