@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  # ── RL API Service ─────────────────────────────────────────────────────────
+  hospital-rl-api:
+    build: .
+    container_name: hospital-rl-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models        # mount trained models
+      - ./experiments:/app/experiments
+      - ./logs:/app/logs
+    environment:
+      - POLICY_PATH=models/policy_best.pkl
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── MLflow Tracking Server ──────────────────────────────────────────────────
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    container_name: mlflow-server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+      - ./experiments:/mlflow/artifacts
+    command: >
+      mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri sqlite:///mlflow/mlruns/mlflow.db
+      --default-artifact-root /mlflow/artifacts
+    restart: unless-stopped
+
+volumes:
+  models:
+  experiments:
+  logs:
+  mlruns:

@@ -1,0 +1,10 @@
+{
+  "run_id": "qlearning-v2-explored",
+  "config": "configs/qlearning_v2.yaml",
+  "n_episodes": 500,
+  "best_avg_reward": -6.603,
+  "final_avg_wait_time": 7.8081,
+  "final_epsilon": 0.02,
+  "q_table_size": 289,
+  "training_time_s": 2.92
+}
