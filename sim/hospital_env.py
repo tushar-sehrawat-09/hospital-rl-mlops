@@ -11,7 +11,7 @@ SDG Link: SDG 3 – Good Health and Well-Being
 import numpy as np
 import random
 from dataclasses import dataclass
-from typing import Tuple, Dict, List
+from typing import Tuple, Dict
 
 
 # ─────────────────────────────────────────────

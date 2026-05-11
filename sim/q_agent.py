@@ -1,3 +1,4 @@
+import random
 """
 Q-Learning Agent for Hospital Resource Allocation
 ===================================================
@@ -112,4 +113,3 @@ class QLearningAgent:
 
 
 # Need random import
-import random
