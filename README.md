@@ -20,6 +20,7 @@ Hospitals face a critical challenge: allocating limited resources (doctors, nurs
 
 ## 🏗️ Architecture
 
+
 ```
 hospital-rl-mlops/
 ├── sim/
@@ -43,6 +44,9 @@ hospital-rl-mlops/
 └── .github/workflows/ci.yml ← CI/CD pipeline (GitHub Actions)
 ```
 
+## 📐 System Architecture Diagram
+
+![Architecture](reports/architecture.png)
 ---
 
 ## 🤖 RL Methodology
